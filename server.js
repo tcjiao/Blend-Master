@@ -22,8 +22,11 @@ app.use(require('./config/checkToken'));
 
 const port = process.env.PORT || 3001;
 
+const drinkRoutes = require('./routes/api/drinks');
+
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/drinks', drinkRoutes);
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests
