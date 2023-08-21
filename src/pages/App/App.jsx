@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
@@ -16,9 +16,10 @@ export default function App() {
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              {/* Route components in here */}
-              <Route path="/drinks/new" element={<NewDrinkPage/>} />
+              <Route path="/drinks/new" element={<NewDrinkPage user={user} setUser={setUser}/>} />
               <Route path="/drinks" element={<DrinkListPage />} />
+              <Route path="/*" element={<Navigate to="/drinks/new" />} />
+
             </Routes>
           </>
           :
