@@ -15,7 +15,7 @@ export default function DrinkDetail({ drink, handleRemoveDrink }) {
         <LineItem
           lineItem={item}
           key={item._id}
-          handleRemoveOrder={handleRemoveDrink}
+          handleRemoveDrink={handleRemoveDrink}
         />
       ))}
     </div>

@@ -9,7 +9,7 @@ export default function LineItem({ lineItem, handleRemoveDrink }) {
           <button
             className="btn-xs"
             onClick={() => handleRemoveDrink(lineItem.item._id)}
-          >−</button>
+          >remove</button>
       </div>
   );
 }

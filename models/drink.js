@@ -22,8 +22,10 @@ const drinkSchema = new Schema({
 });
 
 
-drinkSchema.statics.getCart = function() {
+drinkSchema.statics.getCart = function(userId) {
   return this.findOneAndUpdate(
+    { user: userId },
+    { user: userId },
     { upsert: true, new: true }
   );
 };

@@ -1,12 +1,15 @@
 .LineItem {
   width: 100%;
-  display: grid;
-  grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
-  padding: 1vmin 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vmin;
+  padding: 2vmin;
   color: var(--text-light);
   background-color: var(--white);
-  border-top: .1vmin solid var(--tan-3);
-  font-size: 1.5vw;
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  font-size: 2vmin;
 }
 
 .LineItem:last-child {
@@ -14,6 +17,7 @@
 }
 
 .LineItem button {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5vmin;
 }
-

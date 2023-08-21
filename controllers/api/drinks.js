@@ -13,9 +13,7 @@ async function cart(req, res) {
 }
 
 async function addToCart(req, res) {
-  console.log("123", req.user._id)
   const cart = await Drink.getCart(req.user._id);
-  console.log(cart);
   await cart.addItemToCart(req.params.id);
   res.json(cart);
 }

@@ -32,7 +32,7 @@ export default function NewDrinkPage({user, setuser}) {
   }, []);
 
   async function handleAddToDrink(itemId) {
-    const updatedCart = drinksAPI.addItemToCart(itemId);
+    const updatedCart = await drinksAPI.addItemToCart(itemId);
     setCart(updatedCart);
   }
 
