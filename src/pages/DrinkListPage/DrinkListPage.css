@@ -1,0 +1,19 @@
+.DrinkListPage {
+    height: 100%;
+    display: flex;
+    background-color: var(--white);
+    border-radius: 2vmin;
+  }
+
+  .left-pane {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    overflow: auto;
+  }
+  
+  .right-pane {
+    flex: 2;
+    padding: 20px;
+    overflow: auto;
+  }

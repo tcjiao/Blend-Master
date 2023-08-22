@@ -13,3 +13,12 @@ export function addItemToCart(itemId) {
 export function removeItemFromCart(itemId) {
     return sendRequest(`${BASE_URL}/cart/remove`, 'PUT', { itemId });
   }
+
+export function createDrink(data) {
+    // Changing data on the server, so make it a POST request
+    return sendRequest(`${BASE_URL}/cart/createDrink`, 'POST', data);
+}
+
+export function getAllForUser() {
+  return sendRequest(`${BASE_URL}`);
+}

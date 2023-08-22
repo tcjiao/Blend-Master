@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as drinksAPI from '../../utilities/drinks-api';
 import './NewDrinkPage.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import DrinkDetail from '../../components/DrinkDetail/DrinkDetail';
@@ -13,6 +13,10 @@ export default function NewDrinkPage({user, setuser}) {
   const categoriesRef = useRef([]);
   const [activeCat, setActiveCat] = useState('');
   const [cart, setCart] = useState(null);
+  const navigate = useNavigate();
+  const [drinkName, setDrinkName] = useState('');
+
+
 
 
   useEffect(function () {
@@ -41,6 +45,11 @@ export default function NewDrinkPage({user, setuser}) {
     setCart(updatedCart);
   }
 
+  async function handleCreate() {
+    await drinksAPI.createDrink({ name: drinkName });
+    navigate('/drinks')
+  }
+
   return (
     <main className="NewDrinkPage">
         <CategoryList
@@ -52,7 +61,7 @@ export default function NewDrinkPage({user, setuser}) {
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToDrink={handleAddToDrink}
       />
-      <DrinkDetail drink={cart} handleRemoveDrink={handleRemoveDrink} />
+      <DrinkDetail drink={cart} handleRemoveDrink={handleRemoveDrink} handleCreate={handleCreate} drinkName={drinkName} setDrinkName={setDrinkName} />
     </main>
   );
 }

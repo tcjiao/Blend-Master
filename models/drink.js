@@ -16,7 +16,14 @@ const drinkSchema = new Schema({
     ref: 'User',
     required: true
   },
+  name: {
+    type: String,
+  },
   lineItems: [lineItemSchema],
+  isCreated: {
+    type: Boolean,
+    default: false
+  }
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
@@ -25,7 +32,7 @@ const drinkSchema = new Schema({
 
 drinkSchema.statics.getCart = function(userId) {
   return this.findOneAndUpdate(
-    { user: userId },
+    { user: userId, isCreated: false },
     { user: userId },
     { upsert: true, new: true }
   );

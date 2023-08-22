@@ -4,7 +4,8 @@ module.exports = {
   cart,
   addToCart,
   removeFromCart,
-  checkout,
+  createDrink,
+  getAllForUser
 };
 
 async function cart(req, res) {
@@ -24,9 +25,17 @@ async function removeFromCart(req, res) {
   res.json(cart); 
 }
 
-async function checkout(req, res) {
+
+async function createDrink(req, res) {
+  const { name } = req.body;
   const cart = await Drink.getCart(req.user._id);
-  cart.isPaid = true;
+  cart.name = name;
+  cart.isCreated = true;
   await cart.save();
   res.json(cart);
+}
+
+async function getAllForUser(req, res) {
+  const drinks = await Drink.find({user: req.user._id, isCreated: true}).sort('-updatedAt');
+  res.json(drinks);
 }
