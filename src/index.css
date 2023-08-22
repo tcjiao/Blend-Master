@@ -4,10 +4,10 @@
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --tan-4: #08434a;
+  --blue: #1a74a7;
   --text-light: #968c84;
-  --text-dark: #615954;
+  --text-dark: #86390a;
 }
 
 *, *:before, *:after {
@@ -17,13 +17,13 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
+  background-image: url('/public/bgimg.avif');
+  background-size: cover;
 }
 
 code {
@@ -86,7 +86,7 @@ code {
 }
 
 p.error-message {
-  color: var(--orange);
+  color: var(--blue);
   text-align: center;
 }
 
@@ -114,14 +114,14 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--blue);
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--blue);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
