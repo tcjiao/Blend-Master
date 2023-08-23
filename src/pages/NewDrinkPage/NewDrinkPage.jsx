@@ -15,6 +15,7 @@ export default function NewDrinkPage({user, setuser}) {
   const [cart, setCart] = useState(null);
   const navigate = useNavigate();
   const [drinkName, setDrinkName] = useState('');
+  const [addedItems, setAddedItems] = useState([]);
 
 
 
@@ -38,11 +39,13 @@ export default function NewDrinkPage({user, setuser}) {
   async function handleAddToDrink(itemId) {
     const updatedCart = await drinksAPI.addItemToCart(itemId);
     setCart(updatedCart);
+    setAddedItems([...addedItems, itemId]);
   }
 
   async function handleRemoveDrink(itemId) {
     const updatedCart = await drinksAPI.removeItemFromCart(itemId);
     setCart(updatedCart);
+    setAddedItems((prevItems) => prevItems.filter((id) => id !== itemId));
   }
 
   async function handleCreate() {
@@ -60,6 +63,7 @@ export default function NewDrinkPage({user, setuser}) {
       <MenuList
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
         handleAddToDrink={handleAddToDrink}
+        addedItems={addedItems}
       />
       <DrinkDetail drink={cart} handleRemoveDrink={handleRemoveDrink} handleCreate={handleCreate} drinkName={drinkName} setDrinkName={setDrinkName} />
     </main>
