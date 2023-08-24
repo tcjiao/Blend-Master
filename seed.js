@@ -11,19 +11,28 @@ const Item = require('./models/item');
   const categories = await Category.create([
     {name: 'Milk', sortOrder: 10},
     {name: 'Tea', sortOrder: 20},
-    {name: 'Topping', sortOrder: 30},
-    {name: 'Extra', sortOrder: 40},
+    {name: 'Juice', sortOrder: 30},
+    {name: 'Topping', sortOrder: 40},
   ]);
 
   await Item.deleteMany({});
   const items = await Item.create([
-    { name: 'Chocolate Milk', category: categories[0], isAdd: false },
-    { name: 'Almond Milk', category: categories[0], isAdd: false },
-    { name: 'Black Tea', category: categories[1], isAdd: false },
-    { name: 'Wulong Tea', category: categories[1], isAdd: false },
-    { name: 'Green Tea', category: categories[1], isAdd: false },
-    { name: 'Boba', category: categories[2], isAdd: false },
-    { name: 'Pudding', category: categories[2], isAdd: false },
+    { name: 'Chocolate Milk', category: categories[0] },
+    { name: 'Fresh Milk', category: categories[0] },
+    { name: 'Coconut Milk', category: categories[0] },
+    { name: 'Soy Milk', category: categories[0] },
+    { name: 'Black Tea', category: categories[1] },
+    { name: 'Green Tea', category: categories[1] },
+    { name: 'Wulong Tea', category: categories[1] },
+    { name: 'Apple Juice', category: categories[2] },
+    { name: 'Orange Juice', category: categories[2] },
+    { name: 'Watermelon Juice', category: categories[2] },
+    { name: 'Grape Juice', category: categories[2] },
+    { name: 'Lychee Juice', category: categories[2] },
+    { name: 'Peach Juice', category: categories[2] },
+    { name: 'Boba', category: categories[3] },
+    { name: 'Pudding', category: categories[3] },
+    { name: 'Secret Gift', category: categories[3] }
     
 
   ]);

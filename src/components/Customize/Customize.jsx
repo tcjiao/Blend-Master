@@ -1,8 +1,12 @@
 import Bottle from "../../assets/Bottle.png";
 import Boba from "../../assets/Boba.png";
+import Secret from "../../assets/Secret.png";
 import Pudding from "../../assets/Pudding.png";
 import Blacktea from "../../assets/Blacktea.png";
-import AMilk from "../../assets/AMilk.png";
+import Greentea from "../../assets/Greentea.png";
+import Wulongtea from "../../assets/Wulongtea.png";
+import Milk from "../../assets/Milk.png";
+import ChocolateMilk from "../../assets/ChocolateMilk.png";
 import { motion } from "framer-motion";
 
 
@@ -15,7 +19,42 @@ export default function Customize({lineItem}) {
 
             <div style={{ position:"absolute"}}>
 
-
+                {lineItem.item.name === "Green Tea" && (
+                    <img
+                    src={Greentea}
+                    alt={Greentea}
+                    height="100%"
+                    width="100%"
+                    className="items"
+                    />
+                )}
+                {lineItem.item.name === "Chocolate Milk" && (
+                    <img
+                    src={ChocolateMilk}
+                    alt={ChocolateMilk}
+                    height="100%"
+                    width="100%"
+                    className="items"
+                    />
+                )}
+                {lineItem.item.name === "Wulong Tea" && (
+                    <img
+                    src={Wulongtea}
+                    alt={Wulongtea}
+                    height="100%"
+                    width="100%"
+                    className="items"
+                    />
+                )}
+                {lineItem.item.name === "Secret Gift" && (
+                    <img
+                    src={Secret}
+                    alt={Secret}
+                    height="100%"
+                    width="100%"
+                    className="items"
+                    />
+                )}
                 {lineItem.item.name === "Boba" && (
                     <img
                     src={Boba}
@@ -27,8 +66,8 @@ export default function Customize({lineItem}) {
                 )}
                 {lineItem.item.name === "Almond Milk" && (
                     <img
-                    src={AMilk}
-                    alt={AMilk}
+                    src={Milk}
+                    alt={Milk}
                     height="100%"
                     width="100%"
                     className="items"
