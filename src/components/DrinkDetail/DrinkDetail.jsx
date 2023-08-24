@@ -1,12 +1,14 @@
 import './DrinkDetail.css';
 import LineItem from '../LineItem/LineItem';
+import Customize from '../Customize/Customize';
 
-export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName }) {
+export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, items }) {
   if (!drink) return null;
 
   const lineItems = drink.lineItems || []; 
 
   return (
+    
     <div className="DrinkDetail">
       <div className="section-heading">
       {drink.isCreated ?
@@ -17,12 +19,12 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
       </div>
       {lineItems.map(item => (
         <LineItem
-          isCreated={drink.isCreated}
-          lineItem={item}
-          key={item._id}
-          handleRemoveDrink={handleRemoveDrink}
+        isCreated={drink.isCreated}
+        lineItem={item}
+        key={item._id}
+        handleRemoveDrink={handleRemoveDrink}
         />
-      ))}
+        ))}
         {drink.isCreated ? 
 
               <button
@@ -43,8 +45,15 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
                 className='btn-sm'
                 onClick={handleCreate}
               >Create</button>
+            {lineItems.map(item => (
+              <Customize 
+                lineItem={item}
+                key={item._id}
+              />
+            ))}
             </div>
             }
+
     </div>
   );
 }

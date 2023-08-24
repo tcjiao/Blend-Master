@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import DrinkDetail from '../../components/DrinkDetail/DrinkDetail';
+import Customize from '../../components/Customize/Customize';
 
 export default function NewDrinkPage({user, setuser}) {
   const [menuItems, setMenuItems] = useState([]);
@@ -16,6 +17,7 @@ export default function NewDrinkPage({user, setuser}) {
   const navigate = useNavigate();
   const [drinkName, setDrinkName] = useState('');
   const [addedItems, setAddedItems] = useState([]);
+
 
 
 
@@ -65,7 +67,14 @@ export default function NewDrinkPage({user, setuser}) {
         handleAddToDrink={handleAddToDrink}
         addedItems={addedItems}
       />
-      <DrinkDetail drink={cart} handleRemoveDrink={handleRemoveDrink} handleCreate={handleCreate} drinkName={drinkName} setDrinkName={setDrinkName} />
+      <DrinkDetail 
+      drink={cart} 
+      handleRemoveDrink={handleRemoveDrink} 
+      handleCreate={handleCreate} 
+      drinkName={drinkName} 
+      setDrinkName={setDrinkName}
+      items={menuItems}
+      />
     </main>
   );
 }

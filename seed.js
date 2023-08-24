@@ -17,13 +17,13 @@ const Item = require('./models/item');
 
   await Item.deleteMany({});
   const items = await Item.create([
-    {name: 'Chocolate Milk', category: categories[0]},
-    {name: 'Almond Milk', category: categories[0]},
-    {name: 'Black Tea', category: categories[1]},
-    {name: 'Wulong Tea', category: categories[1]},
-    {name: 'Green Tea', category: categories[1]},
-    {name: 'Boba', category: categories[2]},
-    {name: 'Pudding', category: categories[2]},
+    { name: 'Chocolate Milk', category: categories[0], isAdd: false },
+    { name: 'Almond Milk', category: categories[0], isAdd: false },
+    { name: 'Black Tea', category: categories[1], isAdd: false },
+    { name: 'Wulong Tea', category: categories[1], isAdd: false },
+    { name: 'Green Tea', category: categories[1], isAdd: false },
+    { name: 'Boba', category: categories[2], isAdd: false },
+    { name: 'Pudding', category: categories[2], isAdd: false },
     
 
   ]);
