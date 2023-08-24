@@ -8,8 +8,12 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
   const lineItems = drink.lineItems || []; 
 
   return (
+
     
-    <div className="DrinkDetail">
+    <div className="DrinkDetail" style={{ position:"relative" }}>
+
+
+      
       <div className="section-heading">
       {drink.isCreated ?
           <span>{drink.name}</span>
@@ -17,6 +21,8 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
           <span>NEW Drink</span>
         }
       </div>
+
+    
      
 
 
@@ -47,17 +53,20 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
                 className='btn-sm'
                 onClick={handleCreate}
               >Create</button>
-              </div>
-              }
 
+<div style={{position:"relative"}}>
           {lineItems.map(item => (
               <Customize 
                 lineItem={item}
                 key={item._id}
               />
             ))}
+            </div>
 
-            
+              </div>
+              }
+ 
+          
 
     </div>
   );

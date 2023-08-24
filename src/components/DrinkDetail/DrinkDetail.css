@@ -5,6 +5,7 @@
   padding: 3vmin;
   font-size: 2vmin;
   color: var(--text-light);
+  min-height: 100vmin;
 }
 
 .DrinkDetail .section-heading {

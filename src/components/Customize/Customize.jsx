@@ -16,8 +16,8 @@ export default function Customize({lineItem}) {
             
          
 
+        <div style={{position:"absolute"}} >
 
-            <div style={{ position:"absolute"}}>
 
                 {lineItem.item.name === "Chocolate Milk" && (
                     <img
@@ -28,6 +28,7 @@ export default function Customize({lineItem}) {
                     className="items"
                     />
                 )}
+              
                 {lineItem.item.name === "Almond Milk" || lineItem.item.name === "Coconut Milk" || lineItem.item.name === "Soy Milk" || lineItem.item.name === "Fresh Milk" ? (
                     <img
                     src={Milk}
@@ -37,6 +38,7 @@ export default function Customize({lineItem}) {
                     className="items"
                     />
                 ): null}
+
                 {lineItem.item.name === "Green Tea" && (
                     <img
                     src={Greentea}
@@ -93,8 +95,8 @@ export default function Customize({lineItem}) {
                     />
                     )}
 
-                    <img src={Bottle} alt="Bottle" height="100%" width="100%" className="bottle" />
-            </div>
+                    <img src={Bottle} alt="Bottle" height="100%" width="100%" className="" />
 
+            </div>
     )
 }
