@@ -20,6 +20,7 @@ const Item = require('./models/item');
     { name: 'Chocolate Milk', category: categories[0] },
     { name: 'Fresh Milk', category: categories[0] },
     { name: 'Coconut Milk', category: categories[0] },
+    { name: 'Almond Milk', category: categories[0] },
     { name: 'Soy Milk', category: categories[0] },
     { name: 'Black Tea', category: categories[1] },
     { name: 'Green Tea', category: categories[1] },

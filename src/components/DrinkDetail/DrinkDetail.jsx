@@ -17,6 +17,9 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
           <span>NEW Drink</span>
         }
       </div>
+     
+
+
       {lineItems.map(item => (
         <LineItem
         isCreated={drink.isCreated}
@@ -29,12 +32,11 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
 
               <button
                 className='btn-sm'
-                onClick={handleCreate}
               >Update</button>
             : 
+
+
             <div className='New-Drink-Show'>
-
-
               <input
                 type="text"
                 placeholder="Enter drink name"
@@ -45,14 +47,17 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
                 className='btn-sm'
                 onClick={handleCreate}
               >Create</button>
-            {lineItems.map(item => (
+              </div>
+              }
+
+          {lineItems.map(item => (
               <Customize 
                 lineItem={item}
                 key={item._id}
               />
             ))}
-            </div>
-            }
+
+            
 
     </div>
   );
