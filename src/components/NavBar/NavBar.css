@@ -23,3 +23,8 @@
     color: green;
     font-size: 2vmin;
   }
+
+  .navbar-icon {
+    height: 5vmin;
+    margin-left: 2vmin
+  }
