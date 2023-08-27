@@ -2,7 +2,7 @@
 
 <h2 align="center">
 <p style="margin-top: 20px"></p>
-  <a href="https://blend-master-0894513d8d22.herokuapp.com/">🥛 Access the Application 🍵</a>
+  <a href="https://blend-master-0894513d8d22.herokuapp.com/">🥛 Build Your Drink! 🍵</a>
 </h2>
 
 ## 🍧 Description
@@ -31,5 +31,6 @@ Welcome to Blend Master! This app allows you to create and customize your own dr
 
 ## 🍪 Upcoming Features
 - [ ] Adding some premade drink samples.
-- [ ] Adding better animations for preview drink
-- [ ] Allow user to login with Google or other accounts
+- [ ] Adding better animations for preview drink.
+- [ ] Allow user to login with Google or other accounts.
+- [ ] Add more ingredients for user to choose.
