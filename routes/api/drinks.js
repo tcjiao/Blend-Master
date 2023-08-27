@@ -7,5 +7,8 @@ router.get('/', drinksCtrl.getAllForUser);
 router.post('/cart/items/:id', drinksCtrl.addToCart);
 router.post('/cart/createDrink', drinksCtrl.createDrink);
 router.put('/cart/remove', drinksCtrl.removeFromCart);
+router.delete('/:id', drinksCtrl.deleteDrink);
+router.put('/:id', drinksCtrl.updateDrink);
+
 
 module.exports = router;

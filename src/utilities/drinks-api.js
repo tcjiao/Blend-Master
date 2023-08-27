@@ -22,3 +22,11 @@ export function createDrink(data) {
 export function getAllForUser() {
   return sendRequest(`${BASE_URL}`);
 }
+
+export function deleteDrink(drinkId) {
+  return sendRequest(`${BASE_URL}/${drinkId}`, 'DELETE');
+}
+
+export function updateDrink(drinkId, data) {
+  return sendRequest(`${BASE_URL}/${drinkId}`, 'PUT', data);
+}

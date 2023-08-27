@@ -2,12 +2,12 @@
 
 <h2 align="center">
 <p style="margin-top: 20px"></p>
-  <a href="https://pc-game-list-478c919c2ed1.herokuapp.com/"> Access the Application 🎢</a>
+  <a href="https://blend-master-0894513d8d22.herokuapp.com/"> Access the Application 🎢</a>
 </h2>
 
 ## 🏖️ Description
 
-123
+Welcome to Blend Master! This app allows you to create and customize your own drinks. Whether you're a tea enthusiast or a smoothie lover, you can easily create and customize your favorite drinks.
 
 
 
@@ -23,9 +23,13 @@
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-## 🕹️ How To Use
-- 123
+## 🕹️ Features
+- Create and customize your own drinks.
+- Add various ingredients like boba, pudding, milk, and more.
+- Preview of your own drink.
+- Save your customized drinks for future reference.
+
 
 
 ## 🧸 Upcoming Features
-- [ ] 123
+- [ ] 

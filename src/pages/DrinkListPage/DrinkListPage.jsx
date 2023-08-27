@@ -4,11 +4,16 @@ import './DrinkListPage.css';
 import * as drinksAPI from '../../utilities/drinks-api';
 import DrinkDetail from '../../components/DrinkDetail/DrinkDetail';
 import DrinkList from '../../components/DrinkList/DrinkList';
+import EditDrinkForm from '../../components/EditDrinkForm/EditDrinkForm'; // Import the EditDrinkForm component
+
 
 
 export default function DrinkListPage({ user, setUser }) {
   const [drinks, setDrinks] = useState([]);
   const [activeDrink, setActiveDrink] = useState(null);
+  const [editDrinkId, setEditDrinkId] = useState(null); // State to track the drink being edited
+  const [editedName, setEditedName] = useState('');
+
 
   useEffect(function() {
     async function getDrinks() {
@@ -17,7 +22,14 @@ export default function DrinkListPage({ user, setUser }) {
       setDrinks(drinks);
     }
     getDrinks();
+
   }, []);
+
+  async function handleEditDrink(drinkId, newName) {
+    await drinksAPI.updateDrink(drinkId, { name: newName });
+    setEditDrinkId(null); 
+    setEditedName('');
+  }
 
 
   return (
@@ -30,7 +42,18 @@ export default function DrinkListPage({ user, setUser }) {
         />
       </div>
       <div className="right-pane">
-        <DrinkDetail drink={activeDrink} />
+      {editDrinkId ? (
+          <EditDrinkForm
+            drinkName={activeDrink.name}
+            setDrinkName={setActiveDrink.name}
+            onSave={() => handleEditDrink(activeDrink._id, editedName)} // Use editedName here
+            onCancel={() => setEditDrinkId(null)}
+            drink={activeDrink}
+            onUpdate={(newName) => setEditedName(newName)}
+            />
+        ) : (
+          <DrinkDetail drink={activeDrink} setEditDrinkId={setEditDrinkId} />
+        )}
       </div>
     </main>
   );

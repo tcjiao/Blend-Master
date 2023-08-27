@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 2vmin;
   height: 100vh;
-  background-image: url('/public/bgimg.avif');
+  background-image: url('/public/bg.jpg');
   background-size: cover;
 }
 

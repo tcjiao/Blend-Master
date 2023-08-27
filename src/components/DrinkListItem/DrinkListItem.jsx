@@ -7,7 +7,11 @@ export default function DrinkListItem({ drink, activeDrink, setActiveDrink }) {
       onClick={() => setActiveDrink(drink)}
     >
       <div>
-        <div><span className="smaller">{drink.name}</span></div>
+        {drink ? (
+          <span className="smaller">{drink.name}</span>
+        ) : (
+          <span className="smaller">No drinks available</span>
+        )}
       </div>
       <div className="align-rt">
       </div>

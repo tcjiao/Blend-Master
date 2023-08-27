@@ -5,7 +5,9 @@ module.exports = {
   addToCart,
   removeFromCart,
   createDrink,
-  getAllForUser
+  getAllForUser,
+  deleteDrink,
+  updateDrink
 };
 
 async function cart(req, res) {
@@ -38,4 +40,31 @@ async function createDrink(req, res) {
 async function getAllForUser(req, res) {
   const drinks = await Drink.find({user: req.user._id, isCreated: true}).sort('-updatedAt');
   res.json(drinks);
+}
+
+async function deleteDrink(req, res) {
+  try {
+    const { id } = req.params;
+    await Drink.findByIdAndDelete(id);
+    res.json({ message: 'Drink deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting drink:', error);
+    res.status(500).json({ error: 'An error occurred while deleting the drink.' });
+  }
+}
+
+async function updateDrink(req, res) {
+  const { id } = req.params;
+  const { name } = req.body;
+  
+  try {
+    const drink = await Drink.findByIdAndUpdate(
+      id,
+      { name },
+      { new: true } // Returns the updated drink
+    );
+    res.json(drink);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update drink' });
+  }
 }

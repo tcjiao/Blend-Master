@@ -22,6 +22,8 @@ export default function NewDrinkPage({user, setuser}) {
 
 
 
+
+
   useEffect(function () {
     async function getItems(){
       const items = await itemsAPI.getAll();
@@ -29,7 +31,9 @@ export default function NewDrinkPage({user, setuser}) {
       setMenuItems(items);
       setActiveCat(categoriesRef.current[0]);
     }
+
     getItems();
+
 
     async function getCart() {
       const cart = await drinksAPI.getCart();
@@ -55,6 +59,10 @@ export default function NewDrinkPage({user, setuser}) {
     navigate('/drinks')
   }
 
+
+  
+
+
   return (
     <main className="NewDrinkPage">
         <CategoryList
@@ -67,6 +75,17 @@ export default function NewDrinkPage({user, setuser}) {
         handleAddToDrink={handleAddToDrink}
         addedItems={addedItems}
       />
+
+      <Customize 
+      drink={cart} 
+      handleRemoveDrink={handleRemoveDrink} 
+      handleCreate={handleCreate} 
+      drinkName={drinkName} 
+      setDrinkName={setDrinkName}
+      items={menuItems}
+      />
+
+
       <DrinkDetail 
       drink={cart} 
       handleRemoveDrink={handleRemoveDrink} 

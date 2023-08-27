@@ -22,6 +22,7 @@ const Item = require('./models/item');
     { name: 'Coconut Milk', category: categories[0] },
     { name: 'Almond Milk', category: categories[0] },
     { name: 'Soy Milk', category: categories[0] },
+    { name: 'Taro Milk', category: categories[0] },
     { name: 'Black Tea', category: categories[1] },
     { name: 'Green Tea', category: categories[1] },
     { name: 'Wulong Tea', category: categories[1] },
@@ -33,6 +34,7 @@ const Item = require('./models/item');
     { name: 'Peach Juice', category: categories[2] },
     { name: 'Boba', category: categories[3] },
     { name: 'Pudding', category: categories[3] },
+    { name: 'Icecream', category: categories[3] },
     { name: 'Secret Gift', category: categories[3] }
     
 

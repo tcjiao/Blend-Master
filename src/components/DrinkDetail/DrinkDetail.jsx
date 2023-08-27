@@ -1,11 +1,27 @@
 import './DrinkDetail.css';
 import LineItem from '../LineItem/LineItem';
-import Customize from '../Customize/Customize';
+import * as drinksAPI from '../../utilities/drinks-api';
+import { Link } from 'react-router-dom';
 
-export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, items }) {
+
+
+
+export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, setEditDrinkId }) {
   if (!drink) return null;
 
   const lineItems = drink.lineItems || []; 
+  
+  const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this drink?')) {
+      try {
+        await drinksAPI.deleteDrink(drink._id);
+        window.location.reload(); // Force a complete page refresh
+        // Perform any necessary UI updates here (e.g., remove the drink from the list)
+      } catch (error) {
+        console.error('Error deleting drink:', error);
+      }
+    }
+  };
 
   return (
 
@@ -35,10 +51,14 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
         />
         ))}
         {drink.isCreated ? 
-
-              <button
-                className='btn-sm'
-              >Update</button>
+         <>
+         <button className="btn-sm" onClick={() => setEditDrinkId(drink._id)}>
+          Edit
+        </button>
+         <button className="btn-sm" onClick={handleDelete}>
+           Delete
+         </button>
+       </>
             : 
 
 
@@ -53,15 +73,6 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
                 className='btn-sm'
                 onClick={handleCreate}
               >Create</button>
-
-<div style={{position:"relative"}}>
-          {lineItems.map(item => (
-              <Customize 
-                lineItem={item}
-                key={item._id}
-              />
-            ))}
-            </div>
 
               </div>
               }

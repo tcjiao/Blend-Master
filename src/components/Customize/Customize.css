@@ -1,0 +1,43 @@
+.Customize {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3vmin;
+  font-size: 2vmin;
+  color: var(--text-light);
+  min-height: 100vmin;
+}
+
+.Customize .section-heading {
+  width: 100%
+}
+
+.Customize .line-item-container {
+  margin-top: 3vmin;
+  justify-content: flex-start;
+  height: calc(100vh - 18vmin);
+  width: 100%;
+}
+
+.Customize .total {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 18.35vw 5.75vw 5.25vw;
+  padding: 1vmin 0;
+  color: var(--text-light);
+  border-top: .1vmin solid var(--tan-3);
+}
+
+.Customize .total span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  color: var(--text-dark);
+}
+
+.Customize .total span.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
