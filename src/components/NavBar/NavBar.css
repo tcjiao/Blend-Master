@@ -20,5 +20,6 @@
   }
   
   .navbar-user {
-    color: var(--text-light);
+    color: green;
+    font-size: 2vmin;
   }

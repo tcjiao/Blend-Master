@@ -50,6 +50,8 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
         handleRemoveDrink={handleRemoveDrink}
         />
         ))}
+
+        <div className='buttons' >
         {drink.isCreated ? 
          <>
          <button className="btn-sm" onClick={() => setEditDrinkId(drink._id)}>
@@ -76,7 +78,7 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
 
               </div>
               }
- 
+        </div>
           
 
     </div>
