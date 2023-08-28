@@ -30,3 +30,7 @@ export function deleteDrink(drinkId) {
 export function updateDrink(drinkId, data) {
   return sendRequest(`${BASE_URL}/${drinkId}`, 'PUT', data);
 }
+
+export function getDrink(drinkId) {
+    return sendRequest(`${BASE_URL}/${drinkId}`, 'GET');
+}

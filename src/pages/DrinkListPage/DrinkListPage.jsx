@@ -42,18 +42,7 @@ export default function DrinkListPage({ user, setUser }) {
         />
       </div>
       <div className="right-pane">
-      {editDrinkId ? (
-          <EditDrinkForm
-            drinkName={activeDrink.name}
-            setDrinkName={setActiveDrink.name}
-            onSave={() => handleEditDrink(activeDrink._id, editedName)} // Use editedName here
-            onCancel={() => setEditDrinkId(null)}
-            drink={activeDrink}
-            onUpdate={(newName) => setEditedName(newName)}
-            />
-        ) : (
-          <DrinkDetail drink={activeDrink} setEditDrinkId={setEditDrinkId} />
-        )}
+        <DrinkDetail drink={activeDrink} setEditDrinkId={setEditDrinkId} />
       </div>
     </main>
   );

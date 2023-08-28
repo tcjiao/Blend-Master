@@ -8,7 +8,7 @@ router.post('/cart/items/:id', drinksCtrl.addToCart);
 router.post('/cart/createDrink', drinksCtrl.createDrink);
 router.put('/cart/remove', drinksCtrl.removeFromCart);
 router.delete('/:id', drinksCtrl.deleteDrink);
-router.put('/:id', drinksCtrl.updateDrink);
-
+router.put('/:drinkId', drinksCtrl.updateDrink);
+router.get('/:drinkId', drinksCtrl.getDrinkById);
 
 module.exports = router;

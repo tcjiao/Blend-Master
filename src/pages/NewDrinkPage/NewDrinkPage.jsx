@@ -21,9 +21,6 @@ export default function NewDrinkPage({user, setuser}) {
 
 
 
-
-
-
   useEffect(function () {
     async function getItems(){
       const items = await itemsAPI.getAll();
