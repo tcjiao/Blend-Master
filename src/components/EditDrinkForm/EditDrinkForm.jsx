@@ -1,5 +1,5 @@
 import React from 'react';
-import LineItem from '../LineItem/LineItem'; // Import the LineItem component
+import LineItem from '../LineItem/LineItem';
 import * as drinksAPI from '../../utilities/drinks-api';
 
 
@@ -17,8 +17,8 @@ export default function EditDrinkForm({
 
   const handleSave = async () => {
     try {
-      await drinksAPI.updateDrink(drink._id, { name: drinkName }); // Use drink._id here
-      onUpdate(drinkName); // Update the name in the parent component
+      await drinksAPI.updateDrink(drink._id, { name: drinkName });
+      onUpdate(drinkName); 
     } catch (error) {
       console.error('Error updating drink name:', error);
     }
@@ -31,10 +31,9 @@ export default function EditDrinkForm({
  />
       </div>
 
-      {/* Render LineItem components */}
       {lineItems.map(item => (
         <LineItem
-          isCreated={true} // Adjust this as needed
+          isCreated={true} 
           lineItem={item}
           key={item._id}
         />

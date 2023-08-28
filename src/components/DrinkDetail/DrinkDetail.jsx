@@ -16,8 +16,7 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
     if (window.confirm('Are you sure you want to delete this drink?')) {
       try {
         await drinksAPI.deleteDrink(drink._id);
-        window.location.reload(); // Force a complete page refresh
-        // Perform any necessary UI updates here (e.g., remove the drink from the list)
+        window.location.reload();
       } catch (error) {
         console.error('Error deleting drink:', error);
       }
@@ -58,9 +57,7 @@ export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, dr
         <div className='buttons' >
         {(drink.isCreated && !editable) ?
          <>
-         {/* <button className="btn-sm" onClick={() => setEditDrinkId(drink._id)}>
-          Edit
-        </button> */}
+      
            <button className="btn-sm" onClick={() => {
              navigate(`/drinks/${drink._id}`)
            }}>
