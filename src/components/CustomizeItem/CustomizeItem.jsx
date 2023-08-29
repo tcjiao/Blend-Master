@@ -1,5 +1,4 @@
 import './CustomizeItem.css';
-import { motion } from "framer-motion";
 //Baee
 import Bottle from "../../assets/Bottle.png";
 //Milk

@@ -1,9 +1,8 @@
 import CustomizeItem from '../CustomizeItem/CustomizeItem';
-import LineItem from '../LineItem/LineItem';
 import './Customize.css';
 
 
-export default function Customize({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, items }) {
+export default function Customize({ drink }) {
     if (!drink) return null;
 
     const lineItems = drink.lineItems || []; 

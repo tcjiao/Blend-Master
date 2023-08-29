@@ -96,14 +96,16 @@ export default function UpdateDrinkPage({user, setuser}) {
                 addedItems={addedItems}
             />
 
-            <Customize
-                drink={cart}
-                handleRemoveDrink={handleRemoveDrink}
-                handleCreate={handleCreate}
-                drinkName={drinkName}
-                setDrinkName={setDrinkName}
-                items={menuItems}
-            />
+            {drink && (
+                <Customize
+                    drink={drink}
+                    handleRemoveDrink={handleRemoveDrink}
+                    handleCreate={handleCreate}
+                    drinkName={drinkName}
+                    setDrinkName={setDrinkName}
+                    items={drink.lineItems}
+                />
+            )}
 
 
             {drink && (

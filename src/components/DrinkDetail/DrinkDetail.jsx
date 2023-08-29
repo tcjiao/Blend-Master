@@ -6,7 +6,7 @@ import {Link, useNavigate} from 'react-router-dom';
 
 
 
-export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, setEditDrinkId, editable = false }) {
+export default function DrinkDetail({ drink, handleRemoveDrink, handleCreate, drinkName, setDrinkName, editable = false }) {
 
   const navigate = useNavigate();
   if (!drink) return null;
